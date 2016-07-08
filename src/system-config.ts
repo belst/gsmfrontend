@@ -7,10 +7,14 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
+  'angular2-websocket': 'vendor/angular2-websocket'
 };
 
 /** User packages configuration. */
 const packages: any = {
+  'angular2-websocket': {
+    main: 'index'
+  }
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -34,6 +38,8 @@ const barrels: string[] = [
   // App specific barrels.
   'app',
   'app/shared',
+  'app/login',
+  'app/dashboard',
   /** @cli-barrel */
 ];
 

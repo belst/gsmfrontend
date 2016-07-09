@@ -1,6 +1,6 @@
 import { Injectable }          from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
-import { GsmapiService }       from './gsmapi.service';
+import { GsmapiService }       from './';
 
 @Injectable()
 export class AuthGuard implements CanActivate {

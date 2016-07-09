@@ -3,12 +3,11 @@ import { LoginComponent } from './login';
 import { DashboardComponent } from './dashboard';
 import { AuthGuard, GsmapiService } from './shared';
 
-// import { AppComponent } from './';
-
 const appRoutes: RouterConfig = [
     {
         path: '',
-        component: DashboardComponent
+        component: DashboardComponent,
+        canActivate: [AuthGuard]
     },
     {
         path: 'login',

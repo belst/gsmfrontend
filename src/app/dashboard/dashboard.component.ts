@@ -17,9 +17,7 @@ export class DashboardComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    if (!this.api.loggedin) {
-      this.router.navigate(['/login']);
-    }
+    // unimplemented
   }
 
 }

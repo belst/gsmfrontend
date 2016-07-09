@@ -90,6 +90,7 @@ export class GsmapiService {
         delete (this.callbacks[ans.id]);
       }
       if (ans.error === 0 && ans.subtype === 'apilogin') {
+        this.loggedin = true;
         this.credentials = {
           username: null,
           password: null,

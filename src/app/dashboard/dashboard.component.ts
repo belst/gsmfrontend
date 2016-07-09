@@ -7,7 +7,7 @@ import { Router, ROUTER_DIRECTIVES } from '@angular/router';
   selector: 'app-dashboard',
   templateUrl: 'dashboard.component.html',
   directives: [ROUTER_DIRECTIVES],
-  styleUrls: ['dashboard.component.scss']
+  styleUrls: ['dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
 

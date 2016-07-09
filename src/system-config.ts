@@ -7,7 +7,8 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
-  'angular2-websocket': 'vendor/angular2-websocket'
+  'angular2-websocket': 'vendor/angular2-websocket',
+  '@angular2-material': 'vendor/@angular2-material'
 };
 
 /** User packages configuration. */
@@ -16,6 +17,21 @@ const packages: any = {
     main: 'index'
   }
 };
+
+const materialPkgs: string[] = [
+  'core',
+  'input',
+  'button',
+  'card',
+  'toolbar',
+  'progress-bar'
+];
+
+materialPkgs.forEach(pkg => {
+  packages[`@angular2-material/${pkg}`] = {
+    main: `${pkg}.js`
+  };
+});
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 /***********************************************************************************************

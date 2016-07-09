@@ -1,3 +1,53 @@
-<p>
-  login works!
-</p>
+<div class="login-container">
+  <div class="login mdl-card mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title logintitle">
+      <h2 class="mdl-card__title-text">Login</h2>
+    </div>
+    <form>
+      <div class="mdl-card__supporting-text">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="host" name="host" [(ngModel)]="host">
+            <label class="mdl-textfield__label" for="host">Host</label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" pattern="^([0-9]{1,4}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5])$" id="port" name="port" [(ngModel)]="port">
+            <label class="mdl-textfield__label" for="port">Port</label>
+            <span class="mdl-textfield__error">Input is not a valid port</span>
+          </div>
+
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="username" name="username" [(ngModel)]="credentials.username">
+            <label class="mdl-textfield__label" for="username">Username</label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="password" id="password" name="password" [(ngModel)]="credentials.password">
+            <label class="mdl-textfield__label" for="password">Password</label>
+          </div>
+      </div>
+      <div class="mdl-card__actions" style="text-align: right">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" (click)="onSubmit()">LOGIN</button>
+      </div>
+    </form>
+       <div *ngIf="loading" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+  </div>
+</div>
+
+<!--<div class="login-container">
+  <md-card class="login">
+    <md-card-title>
+      <h2>Login</h2>
+    </md-card-title>
+    <md-card-content>
+      <form>
+        <md-input placeholder="Host" type="text" name="host" [(ngModel)]="host"></md-input>
+        <md-input placeholder="Port" type="number" name="port" [(ngModel)]="port"></md-input>
+        <md-input placeholder="Username" type="text" name="username" [(ngModel)]="credentials.username"></md-input>
+        <md-input placeholder="Password" type="password" name="password" [(ngModel)]="credentials.password"></md-input>
+      </form>
+    </md-card-content>
+    <md-card-actions align="end">
+      <button md-raised-button color="primary" (click)="onSubmit()">LOGIN</button>
+    </md-card-actions>
+    <md-progress-bar *ngIf="loading" mode="indeterminate" color="accent"></md-progress-bar>
+  </md-card>
+</div>-->

@@ -1,6 +1,7 @@
 import { provideRouter, RouterConfig } from '@angular/router';
 import { LoginComponent } from './login';
 import { DashboardComponent } from './dashboard';
+import { AuthGuard, GsmapiService } from './shared';
 
 // import { AppComponent } from './';
 
@@ -15,4 +16,7 @@ const appRoutes: RouterConfig = [
     }
 ];
 
-export const APP_ROUTER_PROVIDERS = provideRouter(appRoutes);
+export const APP_ROUTER_PROVIDERS = [
+    provideRouter(appRoutes),
+    [AuthGuard, GsmapiService]
+];

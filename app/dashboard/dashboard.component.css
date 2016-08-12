@@ -1,0 +1,56 @@
+header {
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 100vw;
+  height: 65px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  header h1 {
+    margin: 0;
+    font-size: 40px;
+    padding-left: 15px;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: rgba(240, 10, 10, 0.9); }
+    header h1 span {
+      color: rgba(0, 0, 0, 0.5); }
+  header nav {
+    box-sizing: border-box;
+    padding-right: 30px; }
+    header nav ul {
+      padding-left: 0;
+      font-size: 1.1em; }
+      header nav ul li {
+        padding-left: 5px;
+        display: inline; }
+        header nav ul li a {
+          text-decoration: none;
+          color: rgba(255, 255, 255, 0.5);
+          transition: color 1s; }
+          header nav ul li a:hover {
+            color: rgba(255, 255, 255, 0.9); }
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+  margin-top: 65px;
+  box-sizing: border-box; }
+
+.row {
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start; }
+  .row .full {
+    width: 100%; }
+  .row .half {
+    width: 50%; }
+  .row .third {
+    width: calc(100% / 3); }
+  .row .quarter {
+    width: 25%; }

@@ -1,10 +1,33 @@
-<p>
-  login works!
-</p>
-<form #f='ngForm' (ngSubmit)="onSubmit(f.value)">
-  <input ngModel type="text" name="host" placeholder="IP or Hostname" required>
-  <input ngModel type="number" name="port" placeholder="Port" required>
-  <input ngModel type="text" name="username" placeholder="Username" required>
-  <input ngModel type="password" name="password" placeholder="Password" required>
-  <input type="submit">
-</form>
+<div class="login-container">
+  <div mdl class="login mdl-card mdl-card mdl-shadow--2dp">
+    <div mdl class="mdl-card__title logintitle">
+      <h2 mdl class="mdl-card__title-text">Login</h2>
+    </div>
+    <form>
+      <div class="mdl-card__supporting-text">
+          <div mdl class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="host" name="host" [(ngModel)]="host">
+            <label class="mdl-textfield__label" for="host">Host</label>
+          </div>
+          <div mdl class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" pattern="^([0-9]{1,4}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5])$" id="port" name="port" [(ngModel)]="port">
+            <label class="mdl-textfield__label" for="port">Port</label>
+            <span class="mdl-textfield__error">Input is not a valid port</span>
+          </div>
+
+          <div mdl class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="username" name="username" [(ngModel)]="credentials.username">
+            <label class="mdl-textfield__label" for="username">Username</label>
+          </div>
+          <div mdl class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="password" id="password" name="password" [(ngModel)]="credentials.password">
+            <label class="mdl-textfield__label" for="password">Password</label>
+          </div>
+      </div>
+      <div class="mdl-card__actions" style="text-align: right">
+        <button mdl class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" (click)="onSubmit()">LOGIN</button>
+      </div>
+    </form>
+       <div mdl *ngIf="loading" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+  </div>
+</div>

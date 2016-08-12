@@ -5,13 +5,29 @@
  * User Configuration.
  **********************************************************************************************/
 /** Map relative paths to URLs. */
-var map = {};
+var map = {
+    'angular2-websocket': 'vendor/angular2-websocket',
+    '@angular2-material': 'vendor/@angular2-material'
+};
 /** User packages configuration. */
 var packages = {
-    '@angular/forms': {
+    'angular2-websocket': {
         main: 'index'
     }
 };
+var materialPkgs = [
+    'core',
+    'input',
+    'button',
+    'card',
+    'toolbar',
+    'progress-bar'
+];
+materialPkgs.forEach(function (pkg) {
+    packages[("@angular2-material/" + pkg)] = {
+        main: pkg + ".js"
+    };
+});
 ////////////////////////////////////////////////////////////////////////////////////////////////
 /***********************************************************************************************
  * Everything underneath this line is managed by the CLI.
@@ -21,6 +37,7 @@ var barrels = [
     '@angular/core',
     '@angular/common',
     '@angular/compiler',
+    '@angular/forms',
     '@angular/http',
     '@angular/router',
     '@angular/platform-browser',
@@ -31,6 +48,8 @@ var barrels = [
     'app',
     'app/shared',
     'app/login',
+    'app/dashboard',
+    'app/flash',
 ];
 var cliSystemConfigPackages = {};
 barrels.forEach(function (barrelName) {

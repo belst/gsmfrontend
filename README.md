@@ -2,6 +2,9 @@
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.9.
 
+# NOTICE: THIS THING IS TOTALLY NOT FINISHED OR CAN DO ANYTHING YET.
+It was mostly created to get a feel for angular2 and a websocket service. (poc. not production ready in any way)
+
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
